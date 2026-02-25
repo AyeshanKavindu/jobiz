@@ -1,0 +1,26 @@
+{
+  "name": "jobiz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyeshanKavindu/jobiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AyeshanKavindu/jobiz/issues"
+  },
+  "homepage": "https://github.com/AyeshanKavindu/jobiz#readme",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}

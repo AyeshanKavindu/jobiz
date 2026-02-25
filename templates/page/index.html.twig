@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Home</title>
+</head>
+<body>
+{% include 'header.html.twig' %}
+
+<section class="hero-banner">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="badge-hot">Job List</div>
+                    <h1 class="display-3 fw-bold mb-3">Search Smarter. Work Better.<br>Live Happier.</h1>
+                    <p class="lead text-light mb-4">Getting a new job is never easy. Check what new jobs we have in store for you on Job Stock.</p>
+                    
+                    <div class="d-flex justify-content-center">
+                        <div class="search-container d-flex align-items-center">
+                            <div class="search-wrapper">
+                               <span class="search-icon"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control search-input" placeholder="Enter job title, company, or keyword…">
+                            </div>
+                            <button class="btn btn-jobstock rounded px-5 ms-2">Search</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,3 +1,142 @@
-body {
-    background-color: skyblue;
+
+/*navbarcss  */
+
+.navbar{
+			background:  #425d7f; font-family: calibri; padding-right: 15px;padding-left: 30px;
+		}
+		.navdiv{
+			display: flex; align-items: center; justify-content: space-between;
+		}
+.logo {
+    width: 120px;
+    height: auto;
 }
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo left, links + buttons right */
+    width: 100%;
+    padding: 0 30px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* spacing between links */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    color: #11999e;
+    text-decoration: underline;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px; /* spacing between buttons */
+}
+
+.nav-buttons button {
+    background-color: #11999e;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.nav-buttons button a {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+
+/*end of navbar css */
+
+/*Banner css */
+
+/* Custom Colors */
+        .btn-jobstock {
+            background-color: #0b8a6a;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+        .btn-jobstock:hover {
+            background-color: #09745a;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-banner {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .badge-hot {
+            background-color: #00a676;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 15px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Search Bar Styling */
+        .search-container {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 850px;
+            width: 100%;
+            margin-top: 30px;
+        }
+        .search-input {
+            border: none;
+            box-shadow: none !important;
+            padding-left: 40px;
+        }
+
+        .search-wrapper {
+            position: relative;
+            flex-grow: 1;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .navbar-brand span {
+            background: #12b488;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
