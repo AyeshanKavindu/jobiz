@@ -173,3 +173,29 @@
     font-weight: 500;
 }
 /*end of job card css */
+
+/*Footer CSS */
+  .footer-link {
+    color: #ffffff;           /* default white */
+    text-decoration: none;    
+    transition: color 0.3s, transform 0.3s; /* smooth animation */
+  }
+
+  .footer-link:hover {
+    color: #11999e;           /* accent color on hover */
+    transform: translateY(-2px); /* slight lift effect */
+  }
+
+    .social-btn {
+    border-color: #ffffff;      /* initial border white */
+    color: #ffffff;             /* initial icon color white */
+    transition: all 0.3s;       /* smooth hover animation */
+  }
+
+  .social-btn:hover {
+    background-color: #11999e;  /* fill with accent color on hover */
+    color: #ffffff;             /* keep icon white */
+    border-color: #11999e;      /* match border to hover color */
+    transform: translateY(-2px); /* optional subtle lift */
+  }
+/*end of footer css */
