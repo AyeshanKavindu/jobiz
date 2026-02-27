@@ -23,4 +23,20 @@ final class PageController extends AbstractController
     {
         return $this->render('page/about.html.twig');   
     }
+
+    #[Route('/jobs', name: 'app_jobs')]
+    public function jobs(JobRepository $jobRepository): Response
+    {
+        $jobs = $jobRepository->findAll();
+        return $this->render('page/jobs.html.twig', [
+            'jobs' => $jobs,
+        ]); 
+    }
+
+    #[Route('/contact', name: 'app_contact')]
+    public function contact(): Response
+    {
+        return $this->render('page/contact.html.twig');
+    }
+
 }
