@@ -26,15 +26,40 @@
         </div>
     </section>
     <section>
-        {% for job in jobs %} 
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">{{ job.title }}</h5>
-                    <p class="card-text">{{ job.description }}</p>
+<div class="container py-5">
+    <h2 class="text-center mb-5 text-secondary">Featured Jobs</h2>
+
+    <div class="row g-4">
+        {% for job in jobs %}
+            <div class="col-md-4">
+                <div class="card job-card h-100">
+                    <div class="card-img-container">
+                       {% set officeImages = [
+                            asset('images/1stpic.jpg'),
+                            asset('images/2ndpic.jpg'),
+                            asset('images/3rdpic.jpg')
+                       ] %}
+                    <img src="{{ officeImages[loop.index0 % officeImages|length] }}" class="card-img-top" alt="Office Image">
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title">{{ job.title }}</h5>
+                        <div class="d-flex align-items-center mb-3">
+                    <span class="location me-2"><i class="bi bi-geo-alt-fill"></i> {{ job.city }}, {{ job.country }}</span>
+                       {% if job.remoteAllowed %}
+                          <span class="badge badge-remote">REMOTE</span>
+                       {% else %}
+                          <span class="badge badge-onsite">ONSITE</span>
+                       {% endif %}
+</div>
+                        <p class="description">{{ job.description|slice(0, 100) ~ '...' }}</p>
+                    </div>
                 </div>
             </div>
         {% endfor %}
-    </section>
+    </div>
+    
+</div>
+</section>
 {% endblock %}
 
 

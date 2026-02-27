@@ -40,3 +40,14 @@ final class PageController extends AbstractController
     }
 
 }
+class HomeController extends AbstractController
+{
+    public function index(JobRepository $jobRepository): Response
+    {
+        $jobs = $jobRepository->findLatestJobs(3); // fetch only 3 latest jobs
+
+        return $this->render('home/index.html.twig', [
+            'jobs' => $jobs,
+        ]);
+    }
+}

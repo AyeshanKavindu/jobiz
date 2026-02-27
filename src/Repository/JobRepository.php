@@ -40,4 +40,13 @@ class JobRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+    public function findLatestJobs(int $limit = 3)
+{
+    return $this->createQueryBuilder('j')
+        ->orderBy('j.id', 'DESC') // or use 'j.createdAt' if you have a created_at field
+        ->setMaxResults($limit)
+        ->getQuery()
+        ->getResult();
+}
 }

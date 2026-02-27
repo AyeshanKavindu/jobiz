@@ -128,3 +128,48 @@
             margin-right: 5px;
         }
 /*end of banner css */
+
+/*Job Card CSS */
+.job-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        /* Image Overlay Effect */
+        .card-img-container {
+            position: relative;
+            height: 200px;
+        }
+        
+        .card-img-top {
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5); /* Darkens the image for logo visibility */
+        }
+
+        .card-title { color: #6c757d; font-size: 1.1rem; }
+        .location { color: #868e96; font-size: 0.95rem; }
+        .description { font-size: 0.9rem; color: #6c757d; line-height: 1.5; }
+        
+
+.badge-remote {
+    background-color: #0dcaf0; /* light blue */
+    color: #fff;               /* white text */
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.badge-onsite {
+    background-color: #dc3545; /* red */
+    color: #fff;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+/*end of job card css */
