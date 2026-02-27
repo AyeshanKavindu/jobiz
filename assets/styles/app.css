@@ -65,25 +65,12 @@
 
 /*Banner css */
 
-/* Custom Colors */
-        .btn-jobstock {
-            background-color: #0b8a6a;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            font-weight: 600;
-        }
-        .btn-jobstock:hover {
-            background-color: #09745a;
-            color: white;
-        }
-
         /* Hero Section */
         .hero-banner {
             position: relative;
             height: 600px;
             background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
-                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80') no-repeat;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -94,7 +81,7 @@
         }
 
         .badge-hot {
-            background-color: #00a676;
+            background-color: #11999e;
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -140,3 +127,4 @@
             border-radius: 4px;
             margin-right: 5px;
         }
+/*end of banner css */
