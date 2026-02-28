@@ -16,9 +16,38 @@
                     Search Smarter. Work Better.<br>Live Happier.
                 </h1>
 
-                <p class="lead text-light mb-4">
-                    Getting a new job is never easy. Check what new jobs we have in store for you on Job Stock.
-                </p>
+                <p id="typed-text" class="lead text-light mb-4"></p>
+
+<script>
+const sentences = [
+    "Getting a new job is never easy.",
+    "Check what new jobs we have in store for you on Job Stock.",
+    "Your dream job might be just one click away!"
+];
+
+let i = 0, j = 0, currentSentence = '', isDeleting = false;
+const typingSpeed = 100, pauseTime = 1000;
+
+function type() {
+    const typedText = document.getElementById('typed-text');
+    if (!typedText) return;
+
+    if (!isDeleting) {
+        currentSentence = sentences[i].substring(0, j + 1);
+        typedText.textContent = currentSentence;
+        j++;
+        if (j === sentences[i].length) { isDeleting = true; setTimeout(type, pauseTime); return; }
+    } else {
+        currentSentence = sentences[i].substring(0, j - 1);
+        typedText.textContent = currentSentence;
+        j--;
+        if (j === 0) { isDeleting = false; i = (i + 1) % sentences.length; }
+    }
+    setTimeout(type, typingSpeed);
+}
+
+document.addEventListener('DOMContentLoaded', type);
+</script>
 
                 <div class="d-flex justify-content-center">
                     <div class="search-container d-flex align-items-center">
@@ -41,7 +70,7 @@
 </section>
 
 <!-- FEATURED JOBS SECTION -->
-<section>
+<section class="featured-jobs">
 <div class="container py-5">
 
     <h2 class="text-center mb-5 text-secondary">Featured Jobs</h2>

@@ -12,6 +12,13 @@
     height: auto;
 }
 
+
+.navbar {
+    height: 80px; /* increase this value to make header taller */
+    display: flex;
+    align-items: center; /* vertically center content */
+}
+
 .navdiv {
     display: flex;
     align-items: center;
@@ -127,6 +134,24 @@
             border-radius: 4px;
             margin-right: 5px;
         }
+
+.hero-banner {
+    padding-bottom: 60px; /* space below hero */
+}
+
+section.featured-jobs {
+    padding-top: 60px; /* space above featured jobs */
+}
+
+#typed-text {
+    min-height: 70px; /* reserve enough space for 2-3 lines */
+    white-space: pre-wrap; /* allows line breaks naturally */
+    line-height: 1.5; /* space between lines */
+}
+#typed-text {
+    transition: all 0.3s ease;
+}
+
 /*end of banner css */
 
 /*Job Card CSS */
