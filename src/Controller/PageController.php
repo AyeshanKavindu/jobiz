@@ -6,17 +6,34 @@ use App\Repository\JobRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Entity\Job;
+
+
 
 final class PageController extends AbstractController
 {
+    // HOMEPAGE: show only 3 latest jobs
     #[Route('/', name: 'app_home')]
-    public function index(JobRepository $jobRepository): Response
+    public function home(JobRepository $jobRepository): Response
     {
-        $jobs = $jobRepository->findAll();
+        $jobs = $jobRepository->findBy([], ['id' => 'DESC'], 3);
+
         return $this->render('page/index.html.twig', [
             'jobs' => $jobs,
         ]);
     }
+
+    // ALL JOBS PAGE: show all jobs
+    #[Route('/all-jobs', name: 'app_all_jobs')]
+    public function allJobs(JobRepository $jobRepository): Response
+    {
+        $jobs = $jobRepository->findAll();
+
+        return $this->render('page/jobs.html.twig', [
+            'jobs' => $jobs,
+        ]);
+    }
+
 
     #[Route('/about', name: 'app_about')]
     public function about(): Response
@@ -39,15 +56,12 @@ final class PageController extends AbstractController
         return $this->render('page/contact.html.twig');
     }
 
-}
-class HomeController extends AbstractController
-{
-    public function index(JobRepository $jobRepository): Response
+    #[Route('/job/{id}/apply', name: 'app_jobapplication')]
+    public function jobApplication(Job $job): Response
     {
-        $jobs = $jobRepository->findLatestJobs(3); // fetch only 3 latest jobs
-
-        return $this->render('home/index.html.twig', [
-            'jobs' => $jobs,
-        ]);
+    return $this->render('page/jobApply.html.twig', [
+        'job' => $job
+    ]);
     }
+
 }

@@ -1,67 +1,120 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Jobiz{% endblock %}
 
 {% block body %}
-    <section class="hero-banner">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="badge-hot">Job List</div>
-                    <h1 class="display-3 fw-bold mb-3">Search Smarter. Work Better.<br>Live Happier.</h1>
-                    <p class="lead text-light mb-4">Getting a new job is never easy. Check what new jobs we have in store for you on Job Stock.</p>
-                    
-                    <div class="d-flex justify-content-center">
-                        <div class="search-container d-flex align-items-center">
-                            <div class="search-wrapper">
-                               <span class="search-icon"><i class="bi bi-search"></i></span>
-                                <input type="text" class="form-control search-input" placeholder="Enter job title, company, or keyword…">
-                            </div>
-                            <button class="btn btn-jobstock rounded px-5 ms-2">Search</button>
-                        </div>
-                    </div>
 
+<!-- HERO SECTION -->
+<section class="hero-banner">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+
+                <div class="badge-hot mb-3">Job List</div>
+
+                <h1 class="display-3 fw-bold mb-3">
+                    Search Smarter. Work Better.<br>Live Happier.
+                </h1>
+
+                <p class="lead text-light mb-4">
+                    Getting a new job is never easy. Check what new jobs we have in store for you on Job Stock.
+                </p>
+
+                <div class="d-flex justify-content-center">
+                    <div class="search-container d-flex align-items-center">
+                        <div class="search-wrapper">
+                            <span class="search-icon">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control search-input"
+                                   placeholder="Enter job title, company, or keyword…">
+                        </div>
+                        <button class="btn btn-jobstock rounded px-5 ms-2">
+                            Search
+                        </button>
+                    </div>
                 </div>
+
             </div>
         </div>
-    </section>
-    <section>
+    </div>
+</section>
+
+<!-- FEATURED JOBS SECTION -->
+<section>
 <div class="container py-5">
+
     <h2 class="text-center mb-5 text-secondary">Featured Jobs</h2>
 
     <div class="row g-4">
+
         {% for job in jobs %}
             <div class="col-md-4">
-                <div class="card job-card h-100">
+
+                <div class="card job-card h-100 shadow-sm">
+
+                    <!-- Random Office Image -->
                     <div class="card-img-container">
-                       {% set officeImages = [
+                        {% set officeImages = [
                             asset('images/1stpic.jpg'),
                             asset('images/2ndpic.jpg'),
                             asset('images/3rdpic.jpg')
-                       ] %}
-                    <img src="{{ officeImages[loop.index0 % officeImages|length] }}" class="card-img-top" alt="Office Image">
+                        ] %}
+                        <img src="{{ officeImages[loop.index0 % officeImages|length] }}"
+                             class="card-img-top"
+                             alt="Office Image">
                     </div>
-                    <div class="card-body p-4">
+
+                    <!-- Card Body -->
+                    <div class="card-body p-4 d-flex flex-column">
+
+                        <!-- Job Title -->
                         <h5 class="card-title">{{ job.title }}</h5>
-                        <div class="d-flex align-items-center mb-3">
-                    <span class="location me-2"><i class="bi bi-geo-alt-fill"></i> {{ job.city }}, {{ job.country }}</span>
-                       {% if job.remoteAllowed %}
-                          <span class="badge badge-remote">REMOTE</span>
-                       {% else %}
-                          <span class="badge badge-onsite">ONSITE</span>
-                       {% endif %}
-</div>
-                        <p class="description">{{ job.description|slice(0, 100) ~ '...' }}</p>
+
+                        <!-- Location + Badge -->
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="location me-2">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                {{ job.city }}, {{ job.country }}
+                            </span>
+
+                            {% if job.remoteAllowed %}
+                                <span class="badge badge-remote">REMOTE</span>
+                            {% else %}
+                                <span class="badge badge-onsite">ONSITE</span>
+                            {% endif %}
+                        </div>
+
+                        <!-- Salary -->
+                        {% if job.salaryMin and job.salaryMax %}
+                            <p class="text-success mb-2">
+                                ${{ job.salaryMin|number_format(0, '.', ',') }}
+                                -
+                                ${{ job.salaryMax|number_format(0, '.', ',') }}
+                            </p>
+                        {% endif %}
+
+                        <!-- Description -->
+                        <p class="description mb-3 flex-grow-1">
+                            {{ job.description|slice(0, 100) ~ '...' }}
+                        </p>
+
+                        <!-- Apply Button -->
+                        <div class="mt-auto">
+                            <a href="{{ path('app_jobapplication', {'id': job.id}) }}"
+                               class="btn btn-jobstock w-100">
+                                <i class="bi bi-send me-1"></i> Apply Now
+                            </a>
+                        </div>
+
                     </div>
                 </div>
+
             </div>
         {% endfor %}
+
     </div>
-    
 </div>
 </section>
+
 {% endblock %}
-
-
-
-

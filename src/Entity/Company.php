@@ -29,6 +29,9 @@ class Company
     #[ORM\Column(length: 255)]
     private ?string $country = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $logo = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Company
     public function setCountry(string $country): static
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(string $logo): static
+    {
+        $this->logo = $logo;
 
         return $this;
     }

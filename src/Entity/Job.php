@@ -57,6 +57,9 @@ class Job
     #[ORM\Column]
     private ?float $salaryMax = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
+
 
     public function __construct()
     {
@@ -225,6 +228,18 @@ class Job
     public function setSalaryMax(float $salaryMax): static
     {
         $this->salaryMax = $salaryMax;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }

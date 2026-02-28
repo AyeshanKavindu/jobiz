@@ -156,21 +156,25 @@
         
 
 .badge-remote {
-    background-color: #0dcaf0; /* light blue */
-    color: #fff;               /* white text */
-    padding: 0.25em 0.5em;
-    border-radius: 0.25rem;
-    font-size: 0.8rem;
-    font-weight: 500;
+    background-color: #0dcaf0 !important; /* cyan */
+    color: #fff !important;
+    padding: 0.35em 0.6em !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    border-radius: 20px !important;
+    line-height: 1 !important;
+    display: inline-block !important;
 }
 
 .badge-onsite {
-    background-color: #dc3545; /* red */
-    color: #fff;
-    padding: 0.25em 0.5em;
-    border-radius: 0.25rem;
-    font-size: 0.8rem;
-    font-weight: 500;
+    background-color: #dc3545 !important; /* red */
+    color: #fff !important;
+    padding: 0.35em 0.6em !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    border-radius: 20px !important;
+    line-height: 1 !important;
+    display: inline-block !important;
 }
 /*end of job card css */
 
