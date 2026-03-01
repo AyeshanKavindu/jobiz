@@ -12,27 +12,20 @@ use App\Entity\Job;
 
 final class PageController extends AbstractController
 {
-    // HOMEPAGE: show only 3 latest jobs
-    #[Route('/', name: 'app_home')]
-    public function home(JobRepository $jobRepository): Response
-    {
-        $jobs = $jobRepository->findBy([], ['id' => 'DESC'], 3);
+   #[Route('/', name: 'app_home')]
+public function home(JobRepository $jobRepository): Response
+{
+    // 3 latest jobs for featured section
+    $latestJobs = $jobRepository->findBy([], ['id' => 'DESC'], 3);
 
-        return $this->render('page/index.html.twig', [
-            'jobs' => $jobs,
-        ]);
-    }
+    // Total job count
+    $jobCount = $jobRepository->count([]);
 
-    // ALL JOBS PAGE: show all jobs
-    #[Route('/all-jobs', name: 'app_all_jobs')]
-    public function allJobs(JobRepository $jobRepository): Response
-    {
-        $jobs = $jobRepository->findAll();
-
-        return $this->render('page/jobs.html.twig', [
-            'jobs' => $jobs,
-        ]);
-    }
+    return $this->render('page/index.html.twig', [
+        'jobs' => $latestJobs, // <-- send only 3 jobs
+        'jobCount' => $jobCount,
+    ]);
+}
 
 
     #[Route('/about', name: 'app_about')]

@@ -44,7 +44,9 @@
 
 .nav-links li a:hover {
     color: #11999e;
-    text-decoration: underline;
+}
+.nav-links li a.active {
+    color: #11999e;
 }
 
 .nav-buttons {
@@ -57,6 +59,9 @@
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
+}
+.nav-buttons button:hover {
+    background-color: #0E7C81; 
 }
 
 .nav-buttons button a {
@@ -72,7 +77,9 @@
 
 /*Banner css */
 
-        /* Hero Section */
+/* Hero Section */
+
+
         .hero-banner {
             position: relative;
             height: 600px;
@@ -144,17 +151,41 @@ section.featured-jobs {
 }
 
 #typed-text {
-    min-height: 70px; /* reserve enough space for 2-3 lines */
-    white-space: pre-wrap; /* allows line breaks naturally */
-    line-height: 1.5; /* space between lines */
+    display: inline-block;
+    min-width: 700px;      /* adjust to longest sentence */
+    white-space: nowrap;
+    font-family: monospace; /* optional, makes it typewriter-like */
 }
-#typed-text {
-    transition: all 0.3s ease;
+
+.cursor {
+    display: inline-block;
+    color: #fff;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+.btn-success {
+    background-color: #11999e;   
+    border-color: #11999e;
+}
+
+.btn-success:hover {
+    background-color: #0E7C81;   
+    border-color: #0E7C81;
 }
 
 /*end of banner css */
 
 /*Job Card CSS */
+.featured-jobs {
+    background-color: #F4F7F7;
+    padding-bottom: 60px;
+}
+
 .job-card {
             border: none;
             border-radius: 8px;
@@ -228,3 +259,75 @@ section.featured-jobs {
     transform: translateY(-2px); /* optional subtle lift */
   }
 /*end of footer css */
+
+/*how does it work section css */
+
+.how-it-works {
+    background-color: #ffffff;
+    padding: 80px 0;
+    padding-top: 60px;
+}
+
+.step-box {
+    text-align: center;
+    position: relative;
+}
+
+.icon-wrapper {
+    width: 110px;
+    height: 110px;
+    border: 2px dashed #d6d6d6; /* outer dashed border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.icon-inner {
+    width: 80px;
+    height: 80px;
+    background-color: #f1f1f1; /* ash inner box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.icon-inner i {
+    font-size: 35px;
+    color: #28a745;
+    transition: all 0.3s ease;
+}
+
+/* Arrow */
+.arrow {
+    font-size: 28px;
+    color: #d6d6d6; /* ash color */
+    position: absolute;
+    top: 45px;
+    right: -30px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.step-box:hover .icon-inner {
+    background-color: #28a745;
+}
+
+.step-box:hover .icon-inner i {
+    color: #ffffff;
+}
+
+.step-box:hover .arrow {
+    color: #28a745;
+}
+
+@media (max-width: 991px) {
+    .arrow {
+        display: none;
+    }
+}
+/*end of how does it work section css */

@@ -6,6 +6,9 @@
     "test": "tests"
   },
   "scripts": {
+    "dev": "encore dev",
+    "dev-server": "encore dev-server",
+    "build": "encore production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +24,12 @@
   "homepage": "https://github.com/AyeshanKavindu/jobiz#readme",
   "description": "",
   "dependencies": {
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "core-js": "^3.48.0"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^5.3.1",
+    "webpack": "^5.105.3",
+    "webpack-cli": "^6.0.1"
   }
 }

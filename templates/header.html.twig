@@ -1,6 +1,5 @@
 
-
-	<nav class="navbar">
+<nav class="navbar">
     <div class="navdiv">
         <!-- Logo Left -->
         <div class="logo">
@@ -10,12 +9,12 @@
         </div>
 
         <!-- Navigation Links Center/Right -->
-        <ul class="nav-links">
-            <li><a href="{{ path('app_home') }}">Home</a></li>
-            <li><a href="{{ path('app_about') }}">About</a></li>
-            <li><a href="{{ path('app_jobs') }}">Job List</a></li>
-            <li><a href="{{ path('app_contact') }}">Contact</a></li>
-        </ul>
+<ul class="nav-links">
+    <li><a href="{{ path('app_home') }}" class="{{ app.request.get('_route') == 'app_home' ? 'active' : '' }}">Home</a></li>
+    <li><a href="{{ path('app_about') }}" class="{{ app.request.get('_route') == 'app_about' ? 'active' : '' }}">About</a></li>
+    <li><a href="{{ path('app_jobs') }}" class="{{ app.request.get('_route') == 'app_jobs' ? 'active' : '' }}">Job List</a></li>
+    <li><a href="{{ path('app_contact') }}" class="{{ app.request.get('_route') == 'app_contact' ? 'active' : '' }}">Contact</a></li>
+</ul>
 
         <!-- Buttons Right -->
         <div class="nav-buttons">

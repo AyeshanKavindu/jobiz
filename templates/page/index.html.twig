@@ -10,44 +10,17 @@
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
 
-                <div class="badge-hot mb-3">Job List</div>
+<p class="mb-4">
+    <span id="job-counter" class="display-3 fw-bold" style="color:#11999e;" data-count="{{ jobCount }}">0</span>
+    <span class="display-3 fw-bold text-light ms-2">Jobs available!</span>
+</p>  
+                
 
                 <h1 class="display-3 fw-bold mb-3">
-                    Search Smarter. Work Better.<br>Live Happier.
+                    You can choose your dream job
                 </h1>
 
-                <p id="typed-text" class="lead text-light mb-4"></p>
-
-<script>
-const sentences = [
-    "Getting a new job is never easy.",
-    "Check what new jobs we have in store for you on Job Stock.",
-    "Your dream job might be just one click away!"
-];
-
-let i = 0, j = 0, currentSentence = '', isDeleting = false;
-const typingSpeed = 100, pauseTime = 1000;
-
-function type() {
-    const typedText = document.getElementById('typed-text');
-    if (!typedText) return;
-
-    if (!isDeleting) {
-        currentSentence = sentences[i].substring(0, j + 1);
-        typedText.textContent = currentSentence;
-        j++;
-        if (j === sentences[i].length) { isDeleting = true; setTimeout(type, pauseTime); return; }
-    } else {
-        currentSentence = sentences[i].substring(0, j - 1);
-        typedText.textContent = currentSentence;
-        j--;
-        if (j === 0) { isDeleting = false; i = (i + 1) % sentences.length; }
-    }
-    setTimeout(type, typingSpeed);
-}
-
-document.addEventListener('DOMContentLoaded', type);
-</script>
+<h1 class="display-5 text-light mb-3" id="typed-text"></h1>
 
                 <div class="d-flex justify-content-center">
                     <div class="search-container d-flex align-items-center">
@@ -58,7 +31,7 @@ document.addEventListener('DOMContentLoaded', type);
                             <input type="text" class="form-control search-input"
                                    placeholder="Enter job title, company, or keyword…">
                         </div>
-                        <button class="btn btn-jobstock rounded px-5 ms-2">
+                        <button class="btn btn-success rounded px-5 ms-2">
                             Search
                         </button>
                     </div>
@@ -145,5 +118,86 @@ document.addEventListener('DOMContentLoaded', type);
     </div>
 </div>
 </section>
+
+<!-- how does it work section -->
+
+<section class="how-it-works">
+    <div class="container text-center">
+
+        <h2 class="fw-bold mb-3">How It Work?</h2>
+        <p class="text-muted mb-5">
+            Many desktop publishing packages and web page editors
+        </p>
+
+        <div class="row justify-content-center g-4">
+
+            <!-- Step 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="step-box">
+                    <div class="icon-wrapper">
+                        <div class="icon-inner">
+                            <i class="bi bi-person"></i>
+                        </div>
+                    </div>
+                    <i class="bi bi-arrow-right arrow"></i>
+                    <h5 class="fw-bold">Create an Account</h5>
+                    <p class="text-muted">
+                        Sign up in minutes and build your professional profile to start exploring thousands of job opportunities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="step-box">
+                    <div class="icon-wrapper">
+                        <div class="icon-inner">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                    </div>
+                    <i class="bi bi-arrow-right arrow"></i>
+                    <h5 class="fw-bold">CV/Resume</h5>
+                    <p class="text-muted">
+                        Add your resume to showcase your skills, experience, and qualifications to top employers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="step-box">
+                    <div class="icon-wrapper">
+                        <div class="icon-inner">
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
+                    <i class="bi bi-arrow-right arrow"></i>
+                    <h5 class="fw-bold">Find Your Job</h5>
+                    <p class="text-muted">
+                        Search and filter jobs by category, location, or company to find the perfect match for your career goals.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="step-box">
+                    <div class="icon-wrapper">
+                        <div class="icon-inner">
+                            <i class="bi bi-send"></i>
+                        </div>
+                    </div>
+                    <h5 class="fw-bold">Save & Apply</h5>
+                    <p class="text-muted">
+                        Save interesting jobs and apply instantly with just one click to speed up your hiring process.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- end of how does it work section -->
 
 {% endblock %}
