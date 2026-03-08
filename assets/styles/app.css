@@ -1,4 +1,5 @@
 
+@import 'bootstrap/dist/css/bootstrap.min.css';
 /*navbarcss  */
 
 .navbar{
@@ -11,7 +12,6 @@
     width: 120px;
     height: auto;
 }
-
 
 .navbar {
     height: 80px; /* increase this value to make header taller */
@@ -49,29 +49,28 @@
     color: #11999e;
 }
 
-.nav-buttons {
-    display: flex;
-    gap: 10px; /* spacing between buttons */
-}
+/* Target buttons only inside nav-buttons */
+.nav-buttons button.btn-nav {
+    background-color: #11999e !important;  /* teal background */
+    color: #ffffff !important;             /* force white text */
+    font-weight: bold !important;
+    font-size: 15px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    line-height: 1.2 !important;
 
-.nav-buttons button {
-    background-color: #11999e;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
+    /* reset browser default button styles */
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
 }
-.nav-buttons button:hover {
-    background-color: #0E7C81; 
+.nav-buttons button.btn-nav:hover {
+    background-color: #0E7C81 !important; /* hover color */
 }
-
-.nav-buttons button a {
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    text-decoration: none;
-}
-
-
 
 /*end of navbar css */
 
@@ -178,6 +177,8 @@ section.featured-jobs {
     border-color: #0E7C81;
 }
 
+
+
 /*end of banner css */
 
 /*Job Card CSS */
@@ -209,21 +210,9 @@ section.featured-jobs {
         .card-title { color: #6c757d; font-size: 1.1rem; }
         .location { color: #868e96; font-size: 0.95rem; }
         .description { font-size: 0.9rem; color: #6c757d; line-height: 1.5; }
-        
 
 .badge-remote {
     background-color: #0dcaf0 !important; /* cyan */
-    color: #fff !important;
-    padding: 0.35em 0.6em !important;
-    font-size: 0.75rem !important;
-    font-weight: 500 !important;
-    border-radius: 20px !important;
-    line-height: 1 !important;
-    display: inline-block !important;
-}
-
-.badge-onsite {
-    background-color: #dc3545 !important; /* red */
     color: #fff !important;
     padding: 0.35em 0.6em !important;
     font-size: 0.75rem !important;
@@ -298,7 +287,7 @@ section.featured-jobs {
 
 .icon-inner i {
     font-size: 35px;
-    color: #28a745;
+    color: #11999e;
     transition: all 0.3s ease;
 }
 
@@ -314,7 +303,7 @@ section.featured-jobs {
 
 /* Hover Effect */
 .step-box:hover .icon-inner {
-    background-color: #28a745;
+    background-color: #11999e;
 }
 
 .step-box:hover .icon-inner i {
@@ -322,7 +311,7 @@ section.featured-jobs {
 }
 
 .step-box:hover .arrow {
-    color: #28a745;
+    color: #11999e;
 }
 
 @media (max-width: 991px) {
@@ -331,3 +320,8 @@ section.featured-jobs {
     }
 }
 /*end of how does it work section css */
+
+
+
+
+   

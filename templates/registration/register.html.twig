@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="card registration-card p-4 p-md-5">
+        <h2 class="fw-bold mb-1">Create your profile</h2>
+        <p class="text-muted mb-4" style="font-size: 0.9rem;">Search & apply to jobs from the world's leading sites.</p>
+
+        {{ form_start(registrationForm, {'attr': {'class': 'needs-validation'}}) }}
+
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                {{ form_row(registrationForm.firstName, {'attr': {'class': 'form-control', 'placeholder': 'Enter first name'}}) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(registrationForm.lastName, {'attr': {'class': 'form-control', 'placeholder': 'Enter last name'}}) }}
+            </div>
+        </div>
+
+        <div class="mb-3">
+            {{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Tell us your Email ID'}}) }}
+        </div>
+
+        <div class="mb-4">
+            {{ form_row(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': '(Minimum 8 characters)'}}) }}
+            <div class="form-text mt-2" style="font-size: 0.75rem;">This helps your account stay protected</div>
+        </div>
+
+        <div class="mb-4 form-check">
+            {{ form_row(registrationForm.agreeTerms, {'label': 'By clicking Register, you agree to the Terms and Conditions & Privacy Policy', 'attr': {'class': 'form-check-input'}}) }}
+        </div>
+
+        <div class="d-grid mb-3">
+            <button type="submit" class="btn btn-primary btn-register">Register now</button>
+        </div>
+
+        {{ form_end(registrationForm) }}
+    </div>
+</div>
+{% endblock %}

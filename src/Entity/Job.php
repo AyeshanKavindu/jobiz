@@ -60,6 +60,9 @@ class Job
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
+    #[ORM\ManyToOne]
+    private ?JobType $jobType = null;
+
 
     public function __construct()
     {
@@ -240,6 +243,18 @@ class Job
     public function setImage(?string $image): static
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getJobType(): ?JobType
+    {
+        return $this->jobType;
+    }
+
+    public function setJobType(?JobType $jobType): static
+    {
+        $this->jobType = $jobType;
 
         return $this;
     }

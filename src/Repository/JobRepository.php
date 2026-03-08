@@ -49,4 +49,6 @@ class JobRepository extends ServiceEntityRepository
         ->getQuery()
         ->getResult();
 }
+
+
 }

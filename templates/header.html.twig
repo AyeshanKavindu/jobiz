@@ -17,9 +17,14 @@
 </ul>
 
         <!-- Buttons Right -->
-        <div class="nav-buttons">
-            <button><a href="#">Login</a></button>
-            <button><a href="#">SignUp</a></button>
-        </div>
+<div class="nav-buttons">
+    {% if app.user %}
+        <span style="margin-right:10px; color:white; margin-top:10px;"  >Welcome, {{ app.user.firstName }}!</span>
+        <button style="color:white;" class="btn-nav" onclick="window.location.href='{{ path('app_logout') }}'">Logout</button>
+    {% else %}
+        <button style="color:white;" class="btn-nav" onclick="window.location.href='{{ path('app_login') }}'">Login</button>
+        <button style="color:white;" class="btn-nav" onclick="window.location.href='{{ path('app_register') }}'">Sign Up</button>
+    {% endif %}
+</div>
     </div>
 </nav>

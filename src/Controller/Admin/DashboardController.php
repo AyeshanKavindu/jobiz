@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Company;     
 use App\Entity\Job;
 use App\Entity\JobType;
+use App\Entity\User;
 
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -34,6 +35,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Company', 'fas fa-building', Company::class);
         yield MenuItem::linkToCrud('Job', 'fas fa-briefcase', Job::class);
         yield MenuItem::linkToCrud('Job Type', 'fas fa-tags', JobType::class);
+        yield MenuItem::linkToCrud('Users', 'fas fa-user', User::class);
     
 
 

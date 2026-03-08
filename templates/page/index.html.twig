@@ -24,17 +24,19 @@
 
                 <div class="d-flex justify-content-center">
                     <div class="search-container d-flex align-items-center">
-                        <div class="search-wrapper">
-                            <span class="search-icon">
-                                <i class="bi bi-search"></i>
-                            </span>
-                            <input type="text" class="form-control search-input"
-                                   placeholder="Enter job title, company, or keyword…">
-                        </div>
-                        <button class="btn btn-success rounded px-5 ms-2">
-                            Search
-                        </button>
-                    </div>
+    <form action="{{ path('app_jobs') }}" method="get" class="d-flex w-100">
+        <div class="search-wrapper flex-grow-1 me-2">
+            <span class="search-icon">
+                <i class="bi bi-search"></i>
+            </span>
+            <input type="text" name="q" class="form-control search-input"
+                   placeholder="Enter job title, company, or keyword…" value="{{ app.request.get('q') }}">
+        </div>
+        <button type="submit" class="btn btn-success rounded px-5">
+            Search
+        </button>
+    </form>
+</div>
                 </div>
 
             </div>
@@ -70,26 +72,34 @@
                     <!-- Card Body -->
                     <div class="card-body p-4 d-flex flex-column">
 
-                        <!-- Job Title -->
-                        <h5 class="card-title">{{ job.title }}</h5>
+                        <!-- Job Title + Badges -->
+<div class="d-flex justify-content-between align-items-start mb-1">
+    <h5 class="card-title mb-0">{{ job.title }}</h5>
 
-                        <!-- Location + Badge -->
-                        <div class="d-flex align-items-center mb-2">
-                            <span class="location me-2">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                {{ job.city }}, {{ job.country }}
-                            </span>
+    <div class="d-flex flex-column align-items-end gap-1 ms-2">
+        {% if job.remoteAllowed %}
+            <span class="badge badge-remote" style="min-width:80px; text-align:center;">REMOTE</span>
+        {% else %}
+            <span class="badge badge-onsite" style="min-width:80px; text-align:center;">ONSITE</span>
+        {% endif %}
 
-                            {% if job.remoteAllowed %}
-                                <span class="badge badge-remote">REMOTE</span>
-                            {% else %}
-                                <span class="badge badge-onsite">ONSITE</span>
-                            {% endif %}
-                        </div>
+        {% if job.jobType %}
+            <span class="badge" style="background-color:#11999e; min-width:80px; text-align:center;">{{ job.jobType.name }}</span>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Location -->
+<div class="mb-1">
+    <span class="location">
+        <i class="bi bi-geo-alt-fill"></i>
+        {{ job.city }}, {{ job.country }}
+    </span>
+</div>
 
                         <!-- Salary -->
                         {% if job.salaryMin and job.salaryMax %}
-                            <p class="text-success mb-2">
+                            <p class="text-success mb-1">
                                 ${{ job.salaryMin|number_format(0, '.', ',') }}
                                 -
                                 ${{ job.salaryMax|number_format(0, '.', ',') }}
@@ -102,12 +112,11 @@
                         </p>
 
                         <!-- Apply Button -->
-                        <div class="mt-auto">
-                            <a href="{{ path('app_jobapplication', {'id': job.id}) }}"
-                               class="btn btn-jobstock w-100">
-                                <i class="bi bi-send me-1"></i> Apply Now
-                            </a>
-                        </div>
+                        <a href="{{ app.user ? path('app_jobapplication', {'id': job.id}) : '#' }}"
+                           class="btn btn-jobstock btn-apply w-100 {% if not app.user %}disabled{% endif %}">
+                             <i class="bi bi-send me-1"></i>
+                             {% if app.user %}Apply Now{% else %}Login to Apply{% endif %}
+                        </a>
 
                     </div>
                 </div>
@@ -199,5 +208,6 @@
     </div>
 </section>
 <!-- end of how does it work section -->
+
 
 {% endblock %}
