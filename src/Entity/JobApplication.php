@@ -14,7 +14,7 @@ class JobApplication
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $coverLetter = null;
 
     #[ORM\Column]
@@ -26,6 +26,8 @@ class JobApplication
     #[ORM\ManyToOne(inversedBy: 'jobApplications')]
     private ?User $user = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $resume = null;
 
     public function getId(): ?int
     {
@@ -37,10 +39,9 @@ class JobApplication
         return $this->coverLetter;
     }
 
-    public function setCoverLetter(string $coverLetter): static
+    public function setCoverLetter(?string $coverLetter): static
     {
         $this->coverLetter = $coverLetter;
-
         return $this;
     }
 
@@ -52,7 +53,6 @@ class JobApplication
     public function setCreatedAt(\DateTime $createdAt): static
     {
         $this->createdAt = $createdAt;
-
         return $this;
     }
 
@@ -64,7 +64,6 @@ class JobApplication
     public function setJob(?Job $job): static
     {
         $this->job = $job;
-
         return $this;
     }
 
@@ -76,8 +75,17 @@ class JobApplication
     public function setUser(?User $user): static
     {
         $this->user = $user;
-
         return $this;
     }
 
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(?string $resume): static
+    {
+        $this->resume = $resume;
+        return $this;
+    }
 }

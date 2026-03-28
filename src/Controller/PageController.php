@@ -136,12 +136,6 @@ public function jobs(Request $request, JobRepository $jobRepository): Response
         return $this->render('page/contact.html.twig');
     }
 
-    #[Route('/job/{id}/apply', name: 'app_jobapplication')]
-    public function jobApplication(Job $job): Response
-    {
-    return $this->render('page/jobApply.html.twig', [
-        'job' => $job
-    ]);
-    }
+
 
 }

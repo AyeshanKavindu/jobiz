@@ -112,7 +112,7 @@
                         </p>
 
                         <!-- Apply Button -->
-                        <a href="{{ app.user ? path('app_jobapplication', {'id': job.id}) : '#' }}"
+                        <a href="{{ app.user ? path('app_job_application', {'id': job.id}) : '#' }}"
                            class="btn btn-jobstock btn-apply w-100 {% if not app.user %}disabled{% endif %}">
                              <i class="bi bi-send me-1"></i>
                              {% if app.user %}Apply Now{% else %}Login to Apply{% endif %}
