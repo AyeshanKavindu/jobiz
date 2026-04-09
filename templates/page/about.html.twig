@@ -2,6 +2,126 @@
 {% block title %}About Us{% endblock %}
 
 {% block body %}
-    <h1>About Us </h1>
+
+<style>
+        :root {
+            --brand-green: #10855e;
+            --light-green: #1db954;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2070') no-repeat center center;
+            background-size: cover;
+            min-height: 400px;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+        }
+
+        .btn-brand {
+            background-color: var(--brand-green);
+            color: white;
+            border-radius: 4px;
+            padding: 10px 25px;
+            border: none;
+        }
+
+        .btn-brand:hover {
+            background-color: #0d6d4d;
+            color: white;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 80px 0;
+        }
+
+      .mission-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    margin: auto;
+}
+
+/* Blob background */
+.blob-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #11999E, #6dd5ed);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    z-index: 1; /* FIX: was -1 */
+}
+
+        .btn-brand {
+  background-color: #11999E;
+  border-color: #11999E;
+  color: #ffffff; /* text color */
+}
+
+.btn-brand:hover {
+  background-color: #0e7f83; /* slightly darker for hover */
+  border-color: #0e7f83;
+}
+.mission-image {
+    position: relative;
+    z-index: 2; /* stays above blob */
+    width: 75%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1 class="display-4 fw-bold">Who We are <br> & Our Smart Mission</h1>
+                    <p class="my-4">
+                        We connect talent with opportunity, helping individuals find the right career path while enabling companies to discover the perfect candidates.
+                    </p>
+                    <a href="http://127.0.0.1:8000/contact">
+                        <button class="btn btn-brand">Get In Touch</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="mission-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Our Mission & Story</h2>
+                    <p class="text-muted">
+                        We started with a simple idea — finding the right job shouldn’t be complicated. In today’s fast-moving world, many talented individuals struggle to connect with the right opportunities, while companies find it challenging to discover the perfect candidates. Our platform was created to bridge that gap.
+                        Our mission is to make job searching smarter, faster, and more accessible for everyone. By combining innovative technology with a user-focused approach, we help job seekers find meaningful careers and empower employers to build strong, capable teams.
+                        We believe that every person deserves the opportunity to grow, succeed, and achieve their career goals. That’s why we are committed to creating a reliable and efficient job platform that supports both individuals and businesses every step of the way.
+                    </p>
+                    <a href="http://127.0.0.1:8000/jobs">
+                      <button class="btn btn-brand">Start Today</button>
+                    </a>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="mission-image-container">
+                        <div class="blob-bg"></div>
+                        <img src="https://pngimg.com/uploads/man/man_PNG6533.png" 
+                        alt="Professional man" class="mission-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 {% endblock %}

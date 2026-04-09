@@ -321,6 +321,78 @@ section.featured-jobs {
 }
 /*end of how does it work section css */
 
+/*about us page css */
+:root {
+            --brand-green: #148d6d;
+            --light-green-bg: #e1f5fe; /* Fallback */
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1512428559083-a401a30c9550?auto=format&fit=crop&q=80&w=1500') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
+            color: white;
+        }
+
+        .btn-brand {
+            background-color: var(--brand-green);
+            color: white;
+            border-radius: 4px;
+            padding: 10px 25px;
+            font-weight: 500;
+            border: none;
+        }
+
+        .btn-brand:hover {
+            background-color: #0f6e55;
+            color: white;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .mission-text {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Image Masking Effect */
+        .image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .green-blob {
+            background: linear-gradient(135deg, #2ecc71, #96e6a1);
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .green-blob img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-weight: 700;
+            color: #333;
+        }
+        
+/*about us page css */
 
 
 
