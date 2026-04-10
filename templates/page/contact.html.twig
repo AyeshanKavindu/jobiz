@@ -1,0 +1,126 @@
+{% extends "base.html.twig" %}
+{% block title %}Contact Us{% endblock %}
+
+{% block body %}
+
+<style>
+        :root {
+            --brand-color: #11999E;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* Hero */
+        .contact-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center;
+            background-size: cover;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        /* Form */
+        .contact-section {
+            padding: 60px 0;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .btn-brand {
+            background-color: var(--brand-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+        }
+
+        .btn-brand:hover {
+            background-color: #0e7f83;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="contact-hero">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you. Get in touch with us anytime.</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Form -->
+            <div class="col-lg-7">
+                <div class="contact-box">
+                    <h4>Send a Message</h4>
+                    <form action="#" method="POST">
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="5" placeholder="Write your message..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-brand">
+                            Send Message
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-5">
+                <div class="contact-box">
+                    <h4>Contact Information</h4>
+                    <p>Reach out to us directly or visit our office.</p>
+
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> support@Jobiz.com</p>
+                        <p><strong>Phone:</strong> +33 456 7890</p>
+                        <p><strong>Location:</strong> Paris, France</p>
+                    </div>
+
+                    <hr>
+
+                    <p>We typically respond within 24 hours.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
